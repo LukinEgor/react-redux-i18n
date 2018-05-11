@@ -4,13 +4,7 @@
   "author": "Convious",
   "main": "./build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "esw --ext .js src --color",
-    "lint:watch": "npm run lint -- --watch",
-    "lint:fix": "npm run lint -- --fix",
-    "clean": "rimraf build",
-    "build": "babel src -d build",
-    "prepublish": "npm run clean && npm run build"
+    "build": "babel src -d build"
   },
   "babel": {
     "presets": [
@@ -22,10 +16,6 @@
   "files": [
     "build"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/zoover/react-redux-i18n.git"
-  },
   "dependencies": {
     "react-i18nify": "^1.11.8"
   },
@@ -64,10 +54,6 @@
     },
     "plugins": [
       "react"
-    ],
-    "extends": "airbnb",
-    "rules": {
-      "arrow-parens": "off"
-    }
+    ]
   }
 }
