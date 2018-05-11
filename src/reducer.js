@@ -1,18 +1,35 @@
-import { LOAD_TRANSLATIONS, SET_LOCALE } from './actions';
+import {
+  LOAD_TRANSLATIONS,
+  SET_LOCALE,
+  SYNC_LOCALE_WITH_LOCALSTORAGE
+} from './actions'
 
-export default (state = {}, action) => {
+const defaultState = {
+  syncWithLocalStorage: false
+}
+
+export default (state = defaultState, action) => {
   switch (action.type) {
     case LOAD_TRANSLATIONS:
       return {
         ...state,
-        translations: action.translations,
-      };
+        translations: action.translations
+      }
+
     case SET_LOCALE:
       return {
         ...state,
-        locale: action.locale,
-      };
+        locale: action.locale
+      }
+
+    case SYNC_LOCALE_WITH_LOCALSTORAGE:
+      return {
+        ...state,
+        syncWithLocalStorage: true,
+        locale: action.locale
+      }
+
     default:
-      return state;
+      return state
   }
-};
+}
