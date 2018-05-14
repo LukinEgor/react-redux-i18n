@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.i18nReducer = exports.syncLocaleWithLocalStorage = exports.loadTranslations = exports.setLocale = exports.LOAD_TRANSLATIONS = exports.SET_LOCALE = exports.Localize = exports.Translate = exports.I18n = undefined;
+exports.i18nReducer = exports.SYNC_LOCALE_WITH_LOCALSTORAGE = exports.syncLocaleWithLocalStorage = exports.loadTranslations = exports.setLocale = exports.LOAD_TRANSLATIONS = exports.SET_LOCALE = exports.Localize = exports.Translate = exports.I18n = undefined;
 
 var _actions = require('./actions');
 
@@ -35,6 +35,12 @@ Object.defineProperty(exports, 'syncLocaleWithLocalStorage', {
   enumerable: true,
   get: function get() {
     return _actions.syncLocaleWithLocalStorage;
+  }
+});
+Object.defineProperty(exports, 'SYNC_LOCALE_WITH_LOCALSTORAGE', {
+  enumerable: true,
+  get: function get() {
+    return _actions.SYNC_LOCALE_WITH_LOCALSTORAGE;
   }
 });
 

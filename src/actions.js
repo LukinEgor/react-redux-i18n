@@ -1,6 +1,6 @@
 import { I18n } from './index'
 
-const localeKey = 'i18n-locale'
+export const LOCALE_STORAGE_LOCALE_KEY = 'i18n-locale'
 
 export const LOAD_TRANSLATIONS = '@@i18n/LOAD_TRANSLATIONS'
 export const loadTranslations = translations => dispatch => {
@@ -20,7 +20,7 @@ export const setLocale = locale => (dispatch, getState) => {
 
   I18n.forceComponentsUpdate()
   if (getState().i18n.syncWithLocalStorage) {
-    localStorage.setItem(localeKey, locale)
+    localStorage.setItem(LOCALE_STORAGE_LOCALE_KEY, locale)
   }
 }
 
@@ -28,6 +28,6 @@ export const SYNC_LOCALE_WITH_LOCALSTORAGE = '@@i18n/SYNC_LOCALE_WITH_LOCALSTORA
 export const syncLocaleWithLocalStorage = (locale) => dispatch => {
   dispatch({
     type: SYNC_LOCALE_WITH_LOCALSTORAGE,
-    locale: localStorage.getItem(localeKey) || locale
+    locale: localStorage.getItem(LOCALE_STORAGE_LOCALE_KEY) || locale
   })
 }

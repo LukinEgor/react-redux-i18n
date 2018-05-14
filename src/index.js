@@ -7,7 +7,8 @@ export {
   LOAD_TRANSLATIONS,
   setLocale,
   loadTranslations,
-  syncLocaleWithLocalStorage
+  syncLocaleWithLocalStorage,
+  SYNC_LOCALE_WITH_LOCALSTORAGE
 } from './actions'
 
 export { default as i18nReducer } from './reducer'

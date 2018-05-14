@@ -3,11 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.syncLocaleWithLocalStorage = exports.SYNC_LOCALE_WITH_LOCALSTORAGE = exports.setLocale = exports.SET_LOCALE = exports.loadTranslations = exports.LOAD_TRANSLATIONS = undefined;
+exports.syncLocaleWithLocalStorage = exports.SYNC_LOCALE_WITH_LOCALSTORAGE = exports.setLocale = exports.SET_LOCALE = exports.loadTranslations = exports.LOAD_TRANSLATIONS = exports.LOCALE_STORAGE_LOCALE_KEY = undefined;
 
 var _index = require('./index');
 
-var localeKey = 'i18n-locale';
+var LOCALE_STORAGE_LOCALE_KEY = exports.LOCALE_STORAGE_LOCALE_KEY = 'i18n-locale';
 
 var LOAD_TRANSLATIONS = exports.LOAD_TRANSLATIONS = '@@i18n/LOAD_TRANSLATIONS';
 var loadTranslations = exports.loadTranslations = function loadTranslations(translations) {
@@ -30,7 +30,7 @@ var setLocale = exports.setLocale = function setLocale(locale) {
 
     _index.I18n.forceComponentsUpdate();
     if (getState().i18n.syncWithLocalStorage) {
-      localStorage.setItem(localeKey, locale);
+      localStorage.setItem(LOCALE_STORAGE_LOCALE_KEY, locale);
     }
   };
 };
@@ -40,7 +40,7 @@ var syncLocaleWithLocalStorage = exports.syncLocaleWithLocalStorage = function s
   return function (dispatch) {
     dispatch({
       type: SYNC_LOCALE_WITH_LOCALSTORAGE,
-      locale: localStorage.getItem(localeKey) || locale
+      locale: localStorage.getItem(LOCALE_STORAGE_LOCALE_KEY) || locale
     });
   };
 };
