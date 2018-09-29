@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-i18n",
-  "version": "1.9.2",
-  "author": "Convious",
+  "name": "react-redux-i18n-with-localstorage-cache",
+  "version": "1.9.3",
+  "author": "lukin_egor",
   "main": "./build/index.js",
   "scripts": {
     "build": "babel src -d build"
