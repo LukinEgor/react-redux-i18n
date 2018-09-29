@@ -1,6 +1,6 @@
 {
   "name": "react-redux-i18n-with-localstorage-cache",
-  "version": "1.9.3",
+  "version": "1.9.4",
   "author": "lukin_egor",
   "main": "./build/index.js",
   "scripts": {
